@@ -1,0 +1,29 @@
+from random import randint
+import pgzrun
+import pgzero
+from pgzero.actor import Actor
+
+import pygame
+
+WIDTH = 400
+HEIGHT = 400
+
+dots = []
+lines = []
+
+next_dot = 0
+
+for dot in range (0, 10):
+    actor = Actor("dot")
+    actor.pos = randint (20, WIDTH - 20), randint (20, HEIGHT - 20)
+    dots.append (actor)
+
+def draw():
+    number = 1
+    for dot in dots:
+        screen.draw.text(str(number), (dot.pos[0], dot.pos[1] + 12))
+        dot.draw()
+        number = number + 1
+        
+
+pgzrun.go()
